@@ -3,10 +3,24 @@ function showweatherDetails(event) {
   
     // Get the city from input
     const city = document.getElementById('city').value;
-    const apiKey = 'WEATHER_API_KEY'; // 
+    const lat = document.getElementById('lat').value;
+    const lon = document.getElementById('lon').value;
+    const apiKey = 'API_KEY'; // Ensure this key is valid
     const url = "http://api.weatherapi.com/v1/current.json";
-    const apiUrl = `${url}?key=${apiKey}&q=${city}&aqi=no`;
+    let query = `${city}` || `${lat}, ${lon}`;
+    let apiUrl = `${url}?key=${apiKey}&q=${query}&aqi=no`;
+    let status = document.getElementById('status')
   
+    // Make sure the user inputted information
+    console.log('city: ', city, ' lat: ', lat, ' lon: ', lon)
+    // user must input city OR latitude and longitudeß
+    if(!city){
+        if((!lat) || (!lon)){
+            status.innerHTML = 'have you entered a city or both latitude and longitude?'
+
+            return;
+        }
+    }
     // Make the request
     fetch(apiUrl)
       .then(response => {

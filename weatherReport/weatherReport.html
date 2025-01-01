@@ -7,9 +7,28 @@
    <h1>Weather Report</h1>
 
   <form id="weatherForm">
-    <label for="city">Enter City:</label>
-    <input type="text" id="city" name="city">
-    <button type="submit">Get Weather</button>
+    <div id="inputs" style="display: flex; gap: 10px; flex-direction: column; max-width: 450px; margin: 20px;">
+        <div>
+            <label for="city"><strong>City:</strong></label>
+            <input type="text" id="city" name="city">
+        </div>
+        <p style="text-align: center;">OR</p>
+        <div style="display: flex; gap: 10px;">
+            <div>
+                <label for="lat"><strong>Latitude:</strong></label>
+                <input type="number" step="0.0000001" id="lat" name="lat"/>
+            </div>
+            <div>
+                <label for="lon"><strong>Longitude:</strong></label>
+                <input type="number" step="0.0000001" id="lon" name="lon"/>
+            </div>
+        </div>
+        <p style="color:red;" id="status"></p>
+        <aside>These are coordinates. E.g. For Brisbane, the coordinates are -27.470125, 153.021072</aside>
+        <button type="submit" style="font-weight: bold; background-color: teal; color: white; padding: 10px 3px; border-radius: 5px; border: none; cursor: pointer;">Get Weather</button>
+    </div>
+   
+
   </form>
 
   <div id="weatherInfo"></div>
