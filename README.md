@@ -5,3 +5,4 @@
 4. Todo List (adds items to a todo list. List can be cleared or completed tasks can be cleared. Items can be deleted)
 5. Colorful Memory Game - (updating styling based on user interaction)
 6. Health Article - (Loading JSON data through XHRHttpRequest)
+7. WeatherReport - ( fetch current weather from weatherapi and display results)
